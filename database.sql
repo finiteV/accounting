@@ -91,6 +91,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 CREATE TABLE IF NOT EXISTS `visitors` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `ip` char(50) COLLATE utf8_unicode_ci NOT NULL,
+  `port` char(10) COLLATE utf8_unicode_ci NOT NULL,
   `lvisitt` bigint(20) NOT NULL,
   `freq` int(10) unsigned NOT NULL,
   `info` char(200) COLLATE utf8_unicode_ci NOT NULL,

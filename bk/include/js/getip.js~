@@ -1,0 +1,6 @@
+function getip(){
+  document.getElementById('ip').value=ILData[0];
+}
+function fuck(){
+  alert("fuck it");
+}
