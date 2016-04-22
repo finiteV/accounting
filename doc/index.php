@@ -87,11 +87,18 @@ table td {
   background-color: #ffffff;
 }
 </style>
+<script type="text/javascript" src="../bk/include/js/sha1.js"></script>
+<script language="javascript">
+    function SubmitForm() {
+        document.getElementById("pw").value = 
+            hex_sha1(document.getElementById("pw").value);
+    }
+</script>
 </head>
 <body>
 <?php
 require_once("../bk/include/lib/config.php");
-if(!empty($_POST['pw']) && $_POST['pw']==$pw){
+if(!empty($_POST['pw']) && $_POST['pw']==sha1($pw)){
 ?>	
 <table>
 	<tr>
@@ -112,8 +119,8 @@ else{
 ?>	
 <form enctype="multipart/form-data" action="index.php" method="post">
 	<label>Your verfication password:</label>
-	<input type='text' name='pw' >
-	<input type="submit" value="submit">
+	<input type='text' id='pw' name='pw' >
+	<input type='submit' value='submit' onclick="SubmitForm();">
 </form>
 
 <?php

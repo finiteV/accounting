@@ -2,7 +2,7 @@
 //echo 'error: '.$_FILES['userfile']['error'];
 require_once("../bk/include/lib/config.php");
 if(!empty($_FILES) && !empty($_POST['pw']) 
-	&& $_POST['pw']==$pw){
+	&& $_POST['pw']==sha1($pw)){
 	$upfile = __DIR__.'/'.basename($_FILES['userfile']['name']);
     //echo $upfile;
 	if(is_uploaded_file($_FILES['userfile']['tmp_name'])){
@@ -22,7 +22,15 @@ if(!empty($_FILES) && !empty($_POST['pw'])
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">	
 	<title>upload files</title>
+<script type="text/javascript" src="../bk/include/js/sha1.js"></script>
+<script language="javascript">
+    function SubmitForm() {
+        document.getElementById("pw").value = 
+            hex_sha1(document.getElementById("pw").value);
+    }
+</script>	
 </head>
 
 <body>
@@ -30,8 +38,8 @@ if(!empty($_FILES) && !empty($_POST['pw'])
 	<label>Choose File:</label>
 	<input type="file" name="userfile">
 	<label>Your verfication password:</label>
-	<input type='text' name='pw' >
-	<input type="submit" value="Upload">
+	<input type='text' id='pw' name='pw' >
+	<input type='submit' value='Upload' onclick="SubmitForm();">
 </form>
 </body>
 </html>
