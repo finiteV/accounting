@@ -1,0 +1,26 @@
+/*
+Copyright (c) 2012 Zhang Chufan. All Right reserved.
+*/
+body{
+  background-image:url("../picture/128-206.jpg");
+  background-repeat:repeat;  
+}
+#login{
+  height:200px;
+  width:160px;
+  margin:140px 80px; 
+}
+#bt{
+  height:40px;
+  width:120px;
+  background:#DEB887;
+  margin-left:5px;
+}
+
+.txt{
+  background:#FFFFFF;
+  height:22px;
+  width:135px;
+  font-size:12pt;
+  border:2px solid #E0E0E0;
+}

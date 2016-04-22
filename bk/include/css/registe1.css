@@ -1,0 +1,29 @@
+body{
+    background:Seashell1;
+}
+article{
+  margin:50px;
+  width:400px;
+  word-wrap:break-word;
+}
+ 
+#registe{
+  border:2px outset #CDC5BF;
+  border-collapse: separate;
+  background:#f7f7f7;
+  width:300px;
+  padding:10px;  
+  border-radius:40px 20px;
+  -moz-border-radius:40px 20px;
+  -o-border-radius:40px 20px;
+  -webkit-border-radius:40px 20px;  
+  box-shadow: 10px 10px 5px #888888;
+}
+#registe table{
+  padding:5px;
+}
+.txt{
+  height:28px;
+  background:#f7f7f7;
+  border:2px solid #CDC5BF;
+}
